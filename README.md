@@ -23,8 +23,10 @@ describe pessoas;         /* o comando ***describe*** para */
 ```
 
 #Aula 4:
+
+```drop database cadastro; ``` esse comnado apaga o db
 ```bash
-/*drop database cadastro; /*apagou o db da primeira aula*
+
 create database cadastro
 default character set utf8
 collate utf8_general_ci;*/
