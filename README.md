@@ -9,7 +9,7 @@ criamos o primeiro banco de dados
 
 ```
 create database cadastro;/* comando pra criar base de dados*/ 
-use cadastro;             /*o comando ****use*** para selecionar a base de dados */
+use cadastro;             /*o comando use para selecionar a base de dados */
 create table pessoas(
 nome varchar(30),
 idade tinyint,
@@ -18,13 +18,13 @@ peso float,
 altura float,
 nacionalidade varchar(20)
 );
-describe pessoas;         /* o comando ***describe*** para */
+describe pessoas;         /* o comando describe para */
 
 ```
 
 #Aula 4:
 
-```drop database cadastro; ``` esse comnado apaga o db
+```drop database cadastro; ``` <div class="text-blue mb-2">esse comnado apaga o db</div>
 ```bash
 
 create database cadastro
@@ -60,10 +60,10 @@ o comando ``` select * from pessoas; ```
  insert into pessoas 
 (nome, nascimento,sexo, peso, altura ,nacionalidade)
 value
-('Maria','1984-12-30','F','55.2','1.60','Angola'),
-('Calrlos','1984-12-30','F','55.2','1.60','Angola'),
-('Maria','1984-12-30','F','55.2','1.60','Angola'),
-('Maria','1984-12-30','F','55.2','1.60','Angola');
+('Agusta','1975-11-11','F','55.2','1.60','Angola'),
+('Calrlos','1999-05-16','M','30','1.55','EUA'),
+('Neusa','1994-12-30','F','80','1.90','Portgal'),
+('Raul','2000-01-01','M','72','1.60','Grécia');
  ```
  
 
