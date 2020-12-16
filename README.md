@@ -5,8 +5,8 @@ data base mySQL with curso em video
 
 #aula 3:
 
-/* criamos o primeiro banco de dados 
-*/
+criamos o primeiro banco de dados 
+
 ```
 create database cadastro;/* comando pra criar base de dados*/ 
 use cadastro;             /*o comando ****use*** para selecionar a base de dados */
