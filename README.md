@@ -24,7 +24,7 @@ describe pessoas;         /* o comando describe para */
 
 #Aula 4:
 
-```drop database cadastro; ``` <div class="text-blue mb-2">esse comnado apaga o db</div>
+```drop database cadastro; ``` esse comnado apaga o db 
 ```bash
 
 create database cadastro
