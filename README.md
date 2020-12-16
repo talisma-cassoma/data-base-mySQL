@@ -37,3 +37,16 @@ nacionalidade varchar(20) default 'Brasil',
 primary key(id)
 )default charset = utf8;
 
+#aula 5 
+
+/*para afixar a bd usamos o comando select * from pessoas */
+
+cadastrar alguem no nossa db
+insert into pessoas 
+(nome, nascimento,sexo, peso, altura ,nacionalidade)
+value
+('Maria','1984-12-30','F','55.2','1.60','Angola');
+select * from pessoas;
+ cadastrar varias peesoas AO MESMO Tempo 
+ 
+
