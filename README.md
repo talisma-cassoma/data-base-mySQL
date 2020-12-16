@@ -7,6 +7,7 @@ data base mySQL with curso em video
 
 /* criamos o primeiro banco de dados 
 */
+```
 create database cadastro;/* comando pra criar base de dados*/ 
 use cadastro;             /*o comando ****use*** para selecionar a base de dados */
 create table pessoas(
@@ -19,8 +20,10 @@ nacionalidade varchar(20)
 );
 describe pessoas;         /* o comando ***describe*** para */
 
-#Aula 4:
+```
 
+#Aula 4:
+```bash
 /*drop database cadastro; /*apagou o db da primeira aula*
 create database cadastro
 default character set utf8
@@ -36,17 +39,29 @@ altura decimal(3,2),
 nacionalidade varchar(20) default 'Brasil',
 primary key(id)
 )default charset = utf8;
-
+```
 #aula 5 
 
-/*para afixar a bd usamos o comando select * from pessoas */
+para afixar a bd usamos o comando 
+```select * from pessoas ```
 
 cadastrar alguem no nossa db
+```bash
 insert into pessoas 
 (nome, nascimento,sexo, peso, altura ,nacionalidade)
 value
 ('Maria','1984-12-30','F','55.2','1.60','Angola');
-select * from pessoas;
+```
+o comando ``` select * from pessoas; ```
  cadastrar varias peesoas AO MESMO Tempo 
+ ```bash 
+ insert into pessoas 
+(nome, nascimento,sexo, peso, altura ,nacionalidade)
+value
+('Maria','1984-12-30','F','55.2','1.60','Angola'),
+('Calrlos','1984-12-30','F','55.2','1.60','Angola'),
+('Maria','1984-12-30','F','55.2','1.60','Angola'),
+('Maria','1984-12-30','F','55.2','1.60','Angola');
+ ```
  
 
