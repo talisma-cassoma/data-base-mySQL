@@ -56,7 +56,8 @@ criamos o primeiro banco de dados
    o comando ``` select * from pessoas; ``` para afixar todos elementos cadastrados 
    para cadastrar varias peesoas AO MESMO Tempo 
     
-    ``` insert into pessoas 
+    ```
+    insert into pessoas 
     (nome, nascimento,sexo, peso, altura ,nacionalidade)
     value
     ('Agusta','1975-11-11','F','55.2','1.60','Angola'),
@@ -71,7 +72,7 @@ criamos o primeiro banco de dados
 
    modificacoes da estrutura do db com  ```alter table```
    
-  para adicionar uma coluna 
+   para adicionar uma coluna 
    ``` alter table pessoas 
    add column profissao varchar(10); 
    ```
