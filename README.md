@@ -108,6 +108,8 @@ criamos o primeiro banco de dados
       ```drop table if exists aluno; ```
    
    - para eliminar uma coluna
-      ```alter table pessoas 
-      drop column profissao;```
+      ```
+      alter table pessoas 
+      drop column profissao;
+      ```
 ## AULA 7: 
