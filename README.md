@@ -65,7 +65,7 @@ para adicionar uma coluna
 add column profissao varchar(10); 
 ```
 adicionara uma coluna 
-profissao depois do nome */
+profissao depois do nome 
 ```
 alter table pessoas 
 add column profissao varchar(10) after nome ; 
@@ -76,13 +76,13 @@ alter table pessoas
 add column codigo int first ; 
 ```
 para modifcar a estruta da coluna, 
-o comando MODIFY muda o tipo primitivo e a constrants da coluna*/
+o comando MODIFY muda o tipo primitivo e a constrants da coluna
 ```
 alter table pessoas 
 modify column profissao varchar(20) default'estudante';
 ```
-para modifcar o nome da coluna para prof, 
-o comando CHANGE o nome, o tipo primitivo e as constrants da coluna
+para modifcar o nome da coluna profissao para prof, 
+o comando CHANGE pode mudar o nome, o tipo primitivo e as constrants da coluna
 ```
 alter table pessoas 
 change column profissao prof varchar(20); 
