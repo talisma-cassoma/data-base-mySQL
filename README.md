@@ -5,6 +5,11 @@ data base mySQL with curso em video
 
 #aula 3:
 
+-banco de dados
+-           tabelas 
+-                campos(colunas)
+   
+
 criamos o primeiro banco de dados 
 
 ```
@@ -18,7 +23,7 @@ peso float,
 altura float,
 nacionalidade varchar(20)
 );
-describe pessoas;         /* o comando describe para */
+describe pessoas;         /* o comando describe ou simplesmente desc para mostar as propriedades da tabela */
 
 ```
 
@@ -65,5 +70,69 @@ value
 ('Neusa','1994-12-30','F','80','1.90','Portgal'),
 ('Raul','2000-01-01','M','72','1.60','Grécia');
  ```
+ commandos DDL: camando de definicao
+ 
+ #aula 6
+ modificacoes da estrutura do db
+ 
+para adicionar uma coluna 
+``` alter table pessoas 
+add column profissao varchar(10); 
+```
+
+para eliminar uma coluna
+```alter table pessoas 
+drop column profissao;
+```
+adicionara uma coluna 
+profissao depois do nome */
+```
+alter table pessoas 
+add column profissao varchar(10) after nome ; 
+```
+adicionara uma coluna e posionar-la no topo 
+```
+alter table pessoas 
+add column codigo int first ; 
+```
+para modifcar a estruta da coluna, 
+o comando MODIFY muda o tipo primitivo e a constrants da coluna*/
+```
+alter table pessoas 
+modify column profissao varchar(20) default'estudante';
+```
+para modifcar o nome da coluna para prof, 
+o comando CHANGE o nome, o tipo primitivo e as constrants da coluna
+```
+alter table pessoas 
+change column profissao prof varchar(20); 
+```
+para modifcar o nome da tabela
+```
+alter table pessoas 
+rename to Gafanhotos; 
+```
+vamos criar outra tabela 
+```
+use cadastro;
+create table if not exists cursos(
+nome varchar(30) not null unique,   /* o comando unique nao permite dois elementos com o mesmo nome*/
+descricao text, 					/* varchar()≠text, o tipo text é para texto longos*/
+carga int,
+totaulas int unsigned,
+ano year default'2020'
+)default charset = utf8; 
+
+alter table cursos
+add column IDcurso int unsigned first;
+alter table cursos
+add primary key(IDcurso);
+```
+comando drop
+```
+drop table if exists aluno;  
+```
+ 
+ 
  
 
