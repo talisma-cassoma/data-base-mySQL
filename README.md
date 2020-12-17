@@ -94,11 +94,11 @@ rename to Gafanhotos;
 ```
 comando drop
 
-para eliminar uma tabela
-```
-drop table if exists aluno;  
-```
-para eliminar uma coluna
-```alter table pessoas 
-drop column profissao;
-```
+- para eliminar uma tabela
+   ```
+   drop table if exists aluno;  
+   ```
+- para eliminar uma coluna
+   ```alter table pessoas 
+   drop column profissao;
+   ```
