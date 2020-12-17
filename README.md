@@ -28,7 +28,7 @@ describe pessoas;         /* o comando describe ou simplesmente desc para mostar
 
 <h2> #aula 4: </h2>
 
-```drop database cadastro; ``` esse comnado apaga o db 
+```drop database cadastro;```  esse comnado apaga o db 
 
 <h2> #aula 5: </h2>
 
