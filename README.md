@@ -3,7 +3,7 @@ data base mySQL with curso em video
 
 ***anotacoes:**** 
 
-#aula 3:
+<strong>#aula 3:</srong>
 
 -banco de dados
 -           tabelas 
@@ -27,7 +27,7 @@ describe pessoas;         /* o comando describe ou simplesmente desc para mostar
 
 ```
 
-#Aula 4:
+<h2> #Aula 4:</h2>
 
 ```drop database cadastro; ``` esse comnado apaga o db 
 ```bash
@@ -47,7 +47,7 @@ nacionalidade varchar(20) default 'Brasil',
 primary key(id)
 )default charset = utf8;
 ```
-#aula 5 
+<h2>#aula 5:</h2>
 
 para afixar a bd usamos o comando 
 ```select * from pessoas ```
@@ -72,7 +72,7 @@ value
  ```
  commandos DDL: camando de definicao
  
- #aula 6
+ <strong>#aula 6</strong>
  modificacoes da estrutura do db
  
 para adicionar uma coluna 
