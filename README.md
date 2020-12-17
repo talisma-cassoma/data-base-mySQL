@@ -51,8 +51,8 @@ primary key(id)
 para afixar a bd usamos o comando 
 ```select * from pessoas ```
 
-cadastrar alguem no nossa db
-```bash
+cadastrar alguem no nossa db com ``` insert into ```
+```
 insert into pessoas 
 (nome, nascimento,sexo, peso, altura ,nacionalidade)
 value
