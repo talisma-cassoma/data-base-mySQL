@@ -3,18 +3,18 @@ data base mySQL with curso em video
 
 ***anotacoes:**** 
 
-<h2> #aula 3: </h2>
+## aula 3:
 
 - banco de dados
 -           tabelas 
 -                campos(colunas)
    
-## DDL
+# DDL
    - create
    - alter
    - drop
 
-## DML
+# DML
    - insert into
    - update
    - delete
@@ -36,11 +36,11 @@ criamos o primeiro banco de dados
    describe pessoas;         /*o comando describe ou simplesmente desc para mostar as propriedades da tabela */
    ```
 
-<h2> #aula 4: </h2>
+## aula 4: 
 
    ```drop database cadastro;```  esse comnado apaga o db 
 
-<h2> #aula 5: </h2>
+## aula 5: 
    
    para afixar a bd usamos o comando 
    ```select * from pessoas ```
@@ -66,7 +66,7 @@ criamos o primeiro banco de dados
    ```
    commandos DDL: camando de definicao
  
- <h2> #aula 6: </h2>
+##aula 6:
 
     modificacoes da estrutura do db com  ```alter table```
     
@@ -112,4 +112,4 @@ criamos o primeiro banco de dados
       ```alter table pessoas 
       drop column profissao;
       ```
- <h2> #aula 7: </h2>
+## aula 7: </h2>
