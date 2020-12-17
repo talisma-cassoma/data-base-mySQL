@@ -61,11 +61,11 @@ value
  modificacoes da estrutura do db com  ```alter table```
  
 para adicionar uma coluna 
-``` alter table pessoas 
+``` 
+alter table pessoas 
 add column profissao varchar(10); 
 ```
-adicionara uma coluna 
-profissao depois do nome 
+adicionara uma coluna profissao depois da coluna nome 
 ```
 alter table pessoas 
 add column profissao varchar(10) after nome ; 
