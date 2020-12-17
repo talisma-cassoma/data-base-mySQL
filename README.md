@@ -5,7 +5,7 @@ data base mySQL with curso em video
 
 <h2> #aula 3: </h2>
 
--banco de dados
+- banco de dados
 -           tabelas 
 -                campos(colunas)
    
@@ -72,8 +72,8 @@ value
  commandos DDL: camando de definicao
  
  <h2> #aula 6: </h2>
- 
- modificacoes da estrutura do db
+
+ modificacoes da estrutura do db com  ```alter table```
  
 para adicionar uma coluna 
 ``` alter table pessoas 
