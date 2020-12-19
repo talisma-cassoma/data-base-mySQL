@@ -5,9 +5,11 @@ data base mySQL with curso em video
 
 ## AULA 3:
 
-- banco de dados
--           tabelas 
--                campos(colunas)
+ banco de dados
+ 
+          ↳ tabelas 
+          
+               ↳ campos(colunas)
    
 # DDL
    - create
