@@ -5,8 +5,9 @@ data base mySQL with curso em video
 
 ## AULA 3:
 
- banco de dados
- 
+     
+     banco de dados
+      
           ↳ tabelas 
           
                ↳ campos(colunas)
