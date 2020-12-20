@@ -41,7 +41,13 @@ criamos o primeiro banco de dados
 
 ## AULA 4: 
 
-   ```drop database cadastro;```  esse comnado apaga o db 
+    ```not null ``` prenchimento obrigatorio  
+    ```auto_increment ``` auto incrementa 
+   tipo primitvo  ```date```
+    ```enum('M','F')``` só aceita as opçōes M e F 
+   tipo primitivo ```decimal(5,2) ``` 5 digitos com 2 casas decimais
+    ``` default 'Brasil' ``` valor préstabelecido
+    ``` primary key(id) ``` identifica os registros e da utomaticamente um valor
 
 ## AULA 5: 
    
