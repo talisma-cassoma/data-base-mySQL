@@ -72,7 +72,7 @@ criamos o primeiro banco de dados
    commandos DDL: camando de definicao
  
 ## AULA 6:
-
+   manipulação de colunas 
    modificacoes da estrutura do db com  ```alter table```
    
    para adicionar uma coluna 
