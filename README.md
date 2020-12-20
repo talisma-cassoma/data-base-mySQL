@@ -41,13 +41,13 @@ criamos o primeiro banco de dados
 
 ## AULA 4: 
 
-    ```not null ``` prenchimento obrigatorio  
-    ```auto_increment ``` auto incrementa 
-   tipo primitvo  ```date```
-    ```enum('M','F')``` só aceita as opçōes M e F 
-   tipo primitivo ```decimal(5,2) ``` 5 digitos com 2 casas decimais
-    ``` default 'Brasil' ``` valor préstabelecido
-    ``` primary key(id) ``` identifica os registros e da utomaticamente um valor
+   ```not null``` prenchimento obrigatorio<br>  
+    ```auto_increment``` auto incrementa<br> 
+   tipo primitvo  ```date``` para datas <br>
+    ```enum('M','F')``` só aceita as opçōes M e F<br> 
+   tipo primitivo ```decimal(5,2) ``` 5 digitos com 2 casas decimais<br>
+    ``` default 'Brasil' ``` valor préstabelecido<br>
+    ``` primary key(id) ``` identifica os registros e da utomaticamente um valor<br>
 
 ## AULA 5: 
    
