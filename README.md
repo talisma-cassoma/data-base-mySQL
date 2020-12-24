@@ -54,7 +54,7 @@ criamos o primeiro banco de dados
    para afixar a bd usamos o comando 
    ```select * from pessoas ```
    
-   cadastrar alguem no nossa db com ``` insert into ```
+   cadastrar alguem na nossa db com ``` insert into ```
    
    ```
    insert into pessoas 
