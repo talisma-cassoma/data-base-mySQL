@@ -44,7 +44,7 @@ criamos o primeiro banco de dados
    ```not null``` prenchimento obrigatorio<br>  
     ```auto_increment``` auto incrementa<br> 
    tipo primitvo  ```date``` para datas <br>
-    ```enum('M','F')``` só aceita as opçōes M e F<br> 
+    ```enum('M','F')``` só aceita as opçōes definidas (M e F)<br> 
    tipo primitivo ```decimal(5,2) ``` 5 digitos com 2 casas decimais<br>
     ``` default 'Brasil' ``` valor préstabelecido<br>
     ``` primary key(id) ``` identifica os registros e da utomaticamente um valor<br>
