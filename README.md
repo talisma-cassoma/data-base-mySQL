@@ -123,3 +123,23 @@ criamos o primeiro banco de dados
       drop column profissao;
       ```
 ## AULA 7: 
+Manipulando linhas ou registro ou tuplas
+
+para evitar mudar varios dados de preferencia usar o WHERE com uma primary key
+```
+update cursos set nome = 'HTML5'
+where IDcurso = '1';
+```
+
+```update cursos set nome='PHP', ano = '2015' where IDcurso = '4';```  mudar varios parametros de uma vez
+```update cursos set nome= 'JAVA', carga='40', ano='2015' where IDcurso ='5' ;``` mudar varios parametros de uma vez
+
+⚠️ Acçōes nāo muito recomendadas:
+
+```update cursos set carga='0', ano='2018' where ano ='2050';``` mudara o carga e o ano pra todas linhas em que ano for 2018
+
+```delete from cursos  where iDcurso = '8';``` apagar linhas(registros) 
+```delete from cursos  where ano = '2018';```  apagara todas linhas(registros) em que ano for 2018
+
+```truncate cursos ;``` apagar todas linhas(registros) da tabela 
+
