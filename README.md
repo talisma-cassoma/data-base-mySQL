@@ -143,3 +143,26 @@ where IDcurso = '1';
 
 ```truncate cursos ;``` apagar todas linhas(registros) da tabela 
 
+## AULA 8:
+salvando a DB usando(fazendo dump do DB)
+banco de dados
+ 
+ /*depois de fazer um dump(backup do db cadastro)*/
+ 
+ /*drop database cadastro; /*apagamos o banco de dados*/ 
+ 
+ exportando o db
+      
+          ↳ server 
+          
+               ↳ Data export
+ 
+ /*importamos os DB gurdada com a estrutura e do dados */
+ importando o db
+          
+          ↳ server 
+          
+               ↳ Data import
+  
+## AULA 9:
+
