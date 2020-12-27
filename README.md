@@ -164,5 +164,6 @@ banco de dados
           
                ↳ Data import
   
-## AULA 9:
+## AULA 11 & 12:
+ Comando select```
 
