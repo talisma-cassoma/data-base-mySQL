@@ -165,5 +165,48 @@ banco de dados
                ↳ Data import
   
 ## AULA 11 & 12:
- Comando select```
+
+Comando ``` select ```
+ 
+
+```select * from cursos order by nome;```
+
+select * from cursos order by nome desc; /*ordem decrecente, esse desc sig descendent */
+
+flitar as colunas
+
+```select nome, carga , ano from cursos;```
+
+flitar as linhas(registros)
+
+```select * from cursos where ano = '2016';```
+
+```select ano, carga from cursos where ano <= '2016';``` podes usar outros OPERADORES OPERACIONAIS como: <, >, != , >=,e saiba <> sig diferente */
+
+```select * from cursos where ano between 2014 and 2016;``` 
+
+```select * from cursos where ano in ('2014','2016');```
+
+```select * from cursos where carga > 35 AND totaulas < 30 order by nome;``` OPERADORES LOGICOS: and, or ; xor , equal 
+
+```select * from cursos where carga > 35 OR totaulas < 30 order by nome;``` 
+ 
+result-set é o resultado de uma consulta, é o que aparece na tela 
+query sig pergunta ou solicitaçao 
+OPERADORES mysql:
+   logicos:       
+
+               AND,OR,
+
+   opreacionais:(saiba que <> sig diferente)  
+
+               <, >, != , >= 
+   outros:
+        
+               between 
+               in()
+               like
+
+
+
 
