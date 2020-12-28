@@ -63,9 +63,8 @@ criamos o primeiro banco de dados
    ('Maria','1984-12-30','F','55.2','1.60','Angola');
    ```
    o comando ``` select * from pessoas; ``` para afixar todos elementos cadastrados 
-   para cadastrar varias peesoas AO MESMO Tempo 
-    
-    ```
+   para cadastrar varias peesoas AO MESMO Tempo
+   ```
     insert into pessoas 
     (nome, nascimento,sexo, peso, altura ,nacionalidade)
     value
@@ -73,7 +72,7 @@ criamos o primeiro banco de dados
     ('Calrlos','1999-05-16','M','30','1.55','EUA'),
     ('Neusa','1994-12-30','F','80','1.90','Portgal'),
     ('Raul','2000-01-01','M','72','1.60','Grécia');
-    ``` 
+   ``` 
   
    commandos DDL: camando de definicao
  
