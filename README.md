@@ -163,7 +163,7 @@ banco de dados
           
                ↳ Data import
   
-## AULA 11 & 12:
+## AULA 11,12 & 13:
 
 Comando ``` select ```
  
@@ -192,20 +192,14 @@ flitar as linhas(registros)
  
 result-set é o resultado de uma consulta, é o que aparece na tela 
 query sig pergunta ou solicitaçao 
-OPERADORES mysql:
-   logicos:       
 
-               AND,OR,
+/*agrupamento*/
+use cadastro;
+select totaulas, count(*) from cursos group by totaulas order by totaulas; 
 
-   opreacionais:(saiba que <> sig diferente)  
-
-               <, >, != , >= 
-   outros:
-        
-               between 
-               in()
-               like
-
-
-
+select ano, count(*) from cursos 
+group by ano having ano > 2014 /*comando having depende do group by*/
+order by count(*) desc; 
+ diferença entre o uso do DISTINCT e do GROUP BY 
+ o comando having depende do group by
 
