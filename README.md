@@ -1,7 +1,9 @@
 # data-base-mySQL
-data base mySQL with curso em video 
+banco de dados mySQL com curso em video 
 
-***anotacoes:**** 
+o codigo sql completo de cada aula está no mySQLscript.txt
+
+minhas ***anotacoes:**** do curso
 
 ## AULA 3:
 
