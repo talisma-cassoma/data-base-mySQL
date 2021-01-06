@@ -209,7 +209,7 @@ order by count(*) desc;
  diferença entre o uso do DISTINCT e do GROUP BY 
  o comando having depende do group by
  
-#Aula14&15
+## Aula14&15
 
 /*RALACIONAMENTO ENTRE TABELAS:
  
@@ -243,7 +243,7 @@ uso do 'as' pra substituicao
  cursos.ano from Gafanhotos right outer join cursos on cursos.IDcurso = Gafanhotos.cursoPreferido;
  ```
 
-#Aula16
+## Aula16
 
 👨‍💻
 
