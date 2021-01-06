@@ -246,34 +246,21 @@ uso do 'as' pra substituicao
 #Aula16
 
 👨‍💻
-```
-use cadastro;
-create table gafanhoto_assite_curso (
-ID int not null auto_increment,
-data date,
-ID_gafanhotos int,
-ID_cursos int unsigned,
-primary key(id),
-foreign key(ID_gafanhotos) references Gafanhotos(id),
-foreign key(ID_cursos) references cursos(IDcurso)
-)default charset = utf8;
 
-/*adiconado dados a tabela*/
-insert into gafanhoto_assite_curso value
-('default', '2014-02-01', '1','2');
-
-/*usando duas tabelas*/
-select g.id, g.nome, a.ID_gafanhotos, ID_cursos from gafanhotos as g 
+usando duas tabelas
+```select g.id, g.nome, a.ID_gafanhotos, ID_cursos from gafanhotos as g 
 join gafanhoto_assite_curso as a 
 on g.id = a.ID-ID_gafanhotos;
+```
 
-/*usando tres tabelas */
-select g.nome, a.ID_cursos, c.nome from gafanhotos as g 
+usando tres tabelas
+```select g.nome, a.ID_cursos, c.nome from gafanhotos as g 
 join gafanhoto_assite_curso as a 
 on g.id = a.ID-ID_gafanhotos join cursos c on c.IDcurso = a.ID_cursos;
+```
 
-/*usando tres tabelas com todos cursos sendo assistido*/
-select g.nome, a.ID_cursos, c.nome from gafanhotos as g right outer
+usando tres tabelas com todos cursos sendo assistido
+```select g.nome, a.ID_cursos, c.nome from gafanhotos as g right outer
 join gafanhoto_assite_curso as a 
 on g.id = a.ID-ID_gafanhotos join cursos c on c.IDcurso = a.ID_cursos;
 ```
