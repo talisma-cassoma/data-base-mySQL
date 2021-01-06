@@ -202,4 +202,73 @@ group by ano having ano > 2014 /*comando having depende do group by*/
 order by count(*) desc; 
  diferença entre o uso do DISTINCT e do GROUP BY 
  o comando having depende do group by
+ 
+#Aula14&15
 
+/*RALACIONAMENTO ENTRE TABELAS:
+ 
+relacionamento de 1 pra 1
+relacionamento de 1 pra muitos
+relacionamento de muitos pra muitos
+
+```
+use cadastro;
+/*a chave estrageira so precisa ter o mesmo tipo e tamanho que a chave primaria*/
+desc Gafanhotos;
+/*adicionando chave estrageira*/
+alter table Gafanhotos add cursoPreferido int unsigned;
+
+alter table Gafanhotos 
+add foreign key(cursoPreferido)
+references cursos(IDcurso);
+/*adiconando cuurso preferido*/
+update Gafanhotos set cursoPreferido = '6' where id='1';
+```
+
+```delete from cursos where id='5';``` esse comanda resultara em erro por causa da ligacao das tabelas pela forgein key
+
+ afixando as colunas dos gafanhotos e cursos num so comando: relacionamento de 1 pra muitos
+ ```select Gafanhotos.nome, Gafanhotos.cursoPreferido, cursos.nome, 
+ cursos.ano from Gafanhotos join cursos on cursos.IDcurso = Gafanhotos.cursoPreferido;
+ ```
+
+uso do 'as' pra substituicao
+```select G.nome, G.cursoPreferido, C.nome, 
+ C.ano from Gafanhotos as G join cursos as C on C.IDcurso = G.cursoPreferido;
+ ```
+ 
+ uso do 'right/left outer' pra afixar todos Gafanhos mesmo os sem cursoPreferido 
+ ou corsos que nao foram preferidos por ninguem 
+ 
+  dando prefenrias a esquerda ou seja aos gafanhotos 
+ ```
+ select Gafanhotos.nome, Gafanhotos.cursoPreferido, cursos.nome, 
+ cursos.ano from Gafanhotos left outer join cursos on cursos.IDcurso = Gafanhotos.cursoPreferido;
+ ```
+ 
+ /*dando prefenrias a direita ou seja aos cursos */
+ ```select Gafanhotos.nome, Gafanhotos.cursoPreferido, cursos.nome, 
+ cursos.ano from Gafanhotos right outer join cursos on cursos.IDcurso = Gafanhotos.cursoPreferido;
+ ```
+
+#Aula16
+
+usando duas tabelas
+```select g.id, g.nome, a.ID_gafanhotos, ID_cursos from gafanhotos as g 
+join gafanhoto_assite_curso as a 
+on g.id = a.ID-ID_gafanhotos;
+```
+
+usando tres tabelas 
+```
+select g.nome, a.ID_cursos, c.nome from gafanhotos as g 
+join gafanhoto_assite_curso as a 
+on g.id = a.ID-ID_gafanhotos join cursos c on c.IDcurso = a.ID_cursos;
+```
+
+usando tres tabelas com todos cursos sendo assistido
+```
+select g.nome, a.ID_cursos, c.nome from gafanhotos as g right outer
+join gafanhoto_assite_curso as a 
+on g.id = a.ID-ID_gafanhotos join cursos c on c.IDcurso = a.ID_cursos;
+```
