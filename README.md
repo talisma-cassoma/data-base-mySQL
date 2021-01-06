@@ -25,6 +25,7 @@ data base mySQL with curso em video
 
 criamos o primeiro banco de dados 
 
+   👨‍💻
    ```
    create database cadastro;/* comando pra criar base de dados*/ 
    use cadastro;             /*o comando use para selecionar a base de dados */
@@ -38,9 +39,44 @@ criamos o primeiro banco de dados
    );
    describe pessoas;         /*o comando describe ou simplesmente desc para mostar as propriedades da tabela */
    ```
+## AULA 3: 
+
+👨‍💻
+```/*Ciando o primeiro banco de dados */ 
+create database cadastro;
+use cadastro;
+create table pessoas(
+nome varchar(30),
+idade tinyint,
+sexo char(1),
+peso float,
+altura float,
+nacionalidade varchar(20)
+);
+describe pessoas;
+```
 
 ## AULA 4: 
 
+👨‍💻
+```
+/*drop database cadastro; /*apagou o db da primeira aula*
+create database cadastro
+default character set utf8
+collate utf8_general_ci;*/
+use cadastro;
+create table pessoas(
+id int not null auto_increment,
+nome varchar(30) not null,
+nascimento date,
+sexo enum('M','F'),/* ou um ou outro*/
+peso decimal(5,2), /*5 digitos com 2 casas decimais*/
+altura decimal(3,2),
+nacionalidade varchar(20) default 'Brasil',
+primary key(id) /* identifica os registros e da utomaticamente um valor*/
+)default charset = utf8;
+
+```
    ```not null``` prenchimento obrigatorio<br>  
     ```auto_increment``` auto incrementa<br> 
    tipo primitvo  ```date``` para datas <br>
@@ -49,8 +85,22 @@ criamos o primeiro banco de dados
     ``` default 'Brasil' ``` valor préstabelecido<br>
     ``` primary key(id) ``` identifica os registros e da utomaticamente um valor<br>
 
-## AULA 5: 
-   
+## AULA 5:
+
+👨‍💻
+```
+/*para afixar a bd usamos o comando select * from pessoas */
+use cadastro;
+/* vamos cadastrar alguem no nosso db*/
+insert into pessoas 
+(nome, nascimento,sexo, peso, altura ,nacionalidade)
+value
+('Agusta','1975-11-11','F','55.2','1.60','Angola'),
+('Calrlos','1999-05-16','M','30','1.55','EUA'),
+('Neusa','1994-12-30','F','80','1.90','Portgal'),
+('Raul','2000-01-01','M','72','1.60','Grécia');
+select * from pessoas;
+```
    para afixar a bd usamos o comando 
    ```select * from pessoas ```
    
@@ -77,6 +127,56 @@ criamos o primeiro banco de dados
    commandos DDL: camando de definicao
  
 ## AULA 6:
+
+👨‍💻
+```
+use cadastro; 
+desc pessoas;
+
+alter table pessoas 
+add column profissao varchar(10);/*para adicionar uma coluna */
+
+alter table pessoas 
+drop column profissao;/*para eliminar uma coluna */
+
+alter table pessoas 
+add column profissao varchar(10) after nome ; /*adicionara uma coluna 
+profissao depois do nome */
+
+alter table pessoas 
+add column codigo int first ; /*adicionara uma coluna e posionar-la no topo */
+
+alter table pessoas 
+modify column profissao varchar(20) default'estudante'; /*para modifcar a estruta da coluna, 
+o comando MODIFY muda o tipo primitivo e a constrants da coluna*/
+
+alter table pessoas 
+change column profissao prof varchar(20); /*para modifcar o nome da coluna para prof, 
+o comando CHANGE o nome, o tipo primitivo e as constrants da coluna*/
+
+alter table pessoas 
+rename to Gafanhotos; /*para modifcar o nome da tabela, */
+
+select * from Gafanhotos;
+desc Gafanhotos;
+
+/*vamos criar outra tabela */
+use cadastro;
+create table if not exists cursos(
+nome varchar(30) not null unique,   /* o comando unique nao permite dois elementos com o mesmo nome*/
+descricao text, 					/* varchar()≠text, o tipo text é para texto longos*/
+carga int,
+totaulas int unsigned,
+ano year default'2020'
+)default charset = utf8; 
+
+alter table cursos
+add column IDcurso int unsigned first;
+alter table cursos
+add primary key(IDcurso);
+
+drop table if exists aluno;  
+```
    manipulação de colunas 
    modificacoes da estrutura do db com  ```alter table```
    
@@ -124,6 +224,42 @@ criamos o primeiro banco de dados
 ## AULA 7: 
 Manipulando linhas ou registro ou tuplas
 
+👨‍💻
+```
+/*Manipulando linhas ou registro ou tuplas*/
+use cadastro;
+insert into cursos values 
+('1', 'HTML','curso de HTML5','40', '37', '2014'),
+('2', 'Algoritimo', 'Logica de programaçāo','20', '15', '2014'),
+('3', 'photoshop','Dcas de photoshop CC','10', '8', '2014' ),
+('4', 'PGP', 'Curso de PHP para inciante','40', '20', '2010'),
+('5', 'jarva','Introduçāo a liguagem java','10', '29', '2000' ),
+('6', 'MySQL','Bancos de dados mySQL','30', '15', '2016' ),
+('7', 'word','Curso completo de word','40', '30', '2018' ),
+('8', 'Sapateado', 'danças Rítmicas','40', '30', '2016'),
+('9', 'Cozinha Arabe', 'Aprenda a fazer kibe','40', '30', '2018'),
+('10', 'Youtuber', 'Gerar polemicae ganhar inscritos','5', '2', '2018');
+
+/*select * from cursos ;*/
+
+update cursos set nome = 'HTML5'
+where IDcurso = '1';/* <- para evitar mudar varios dados de preferencia usar o WHERE com uma primary key */
+
+update cursos set nome='PHP', ano = '2015' where IDcurso = '4'; /*mudar varios parametros de uma vez*/
+update cursos set nome= 'JAVA', carga='40', ano='2015' where IDcurso ='5' ; /*mudar varios parametros de uma vez*/
+/*update cursos set nome= 'JAVA', carga='40', ano='2015' where IDcurso ='5' limit 1;/*faz a mesma coisa*/
+
+/*acao nao muito recomendada*/
+update cursos set carga='0', ano='2018' where ano ='2050';/*mudara o carga e o ano pra todas linhas em que ano for 2018*/
+
+delete from cursos  where iDcurso = '8';/*apagar linhas(registros) */
+/*delete from cursos  where ano = '2018';/*apagara todas linhas(registros) em que ano for 2018*  */
+
+truncate cursos ;/*apagar todas linhas(registros) da tabela */
+
+select * from cursos ;
+```
+
 para evitar mudar varios dados de preferencia usar o WHERE com uma primary key
 ```
 update cursos set nome = 'HTML5'
@@ -145,7 +281,19 @@ where IDcurso = '1';
 ## AULA 8:
 salvando a DB usando(fazendo dump do DB)
 banco de dados
- 
+
+👨‍💻
+ ```
+ /*depois de fazer um dump(backup do db cadastro)*/
+/*drop database cadastro; /*apagamos o banco de dados*/ 
+/*importamos os DB gurdada com a estrutura e do dados */
+use cadastro;
+show tables;
+desc cursos ;
+desc gafanhotos;
+select * from cursos;
+select * from gafanhotos;
+ ```
  /*depois de fazer um dump(backup do db cadastro)*/
  
  /*drop database cadastro; /*apagamos o banco de dados*/ 
@@ -166,7 +314,117 @@ banco de dados
 ## AULA 11,12 & 13:
 
 Comando ``` select ```
- 
+
+👨‍💻
+ ```
+ use cadastro;
+select * from cursos order by nome;
+select * from cursos order by nome desc; /*ordem decrecente, esse desc sig descendent */
+/*flitar as colunas*/
+select nome, carga , ano from cursos; 
+/*flitar as linhas(registros)*/
+select * from cursos where ano = '2016';
+select ano, carga from cursos where ano <= '2016';/* podes usar outros OPERADORES OPERACIONAIS como: <, >, != , >=,e saiba <> sig diferente */
+select * from cursos where ano between 2014 and 2016; 
+select * from cursos where ano in ('2014','2016');
+select * from cursos where carga > 35 AND totaulas < 30 order by nome;/*OPERADORES LOGICOS: and, or ; xor , equal */  
+select * from cursos where carga > 35 OR totaulas < 30 order by nome;
+select * from cursos where nome like 'P%'; /*cursos que começam com P*/
+select * from cursos where nome like '%a'; /*cursos que começam em a*/
+select * from cursos where nome like '%v%'; /*cursos que tem a letra v*/
+select * from Gafanhotos where nome like '%Silva%'; /*gafanhotos que tem a letra silva*/
+select * from cursos where nome like 'Ph%p'; /*cursos que começam com PH e terminam com P*/
+select * from cursos where nome like 'PH%P_'; /*cursos que começam com PH e que tenham um caractere depois do P, o _ representa uma letra ou numero qualquer */
+select * from cursos where nome like 'p__t%'; /*cursos que começam com PH e que tenham um caractere depois do P, o _ representa uma letra ou numero qualquer */
+select distinct nacionalidade from Gafanhotos order by nacionalidade; /*comando distict considera apenas uma ocorrencia de cada valor dentro dos registros*/
+/*funcoes de agregaçao*/
+select count(*) from cursos where carga <40; /* mostra o total de cursos com  carga menor que 40 */
+select max(carga) from cursos; /* mostra a maior carga da tabela cursos */
+select min(totaulas) from cursos where ano = '2016'; /* mostra a menor de totaulas da tabela cursos no ano 2016*/
+select sum(totaulas) from cursos; /* mostra a soma dos totaulas da tabela cursos */
+select avg(totaulas) from cursos; /* mostra a média dos totaulas da tabela cursos */
+
+/*result-set é o resultado de uma consulta, é o que aparece na tela */
+/*query sig pergunta ou solicitaçao */
+
+/*
+1) Uma lista com o nome de todos os gafanhotos Mulheres.
+2) Uma lista com os dados de todos aqueles que nasceram entre 1/Jan/2000 e 31/Dez/2015.
+3) Uma lista com o nome de todos os homens que trabalham como programadores.
+4) Uma lista com os dados de todas as mulheres que nasceram no Brasil e que têm seu nome iniciando com a letra J.
+5) Uma lista com o nome e nacionalidade de todos os homens que têm Silva no nome, não nasceram no Brasil e pesam menos de 100 Kg.
+6) Qual é a maior altura entre gafanhotos Homens que moram no Brasil?
+7) Qual é a média de peso dos gafanhotos cadastrados?
+8) Qual é o menor peso entre os gafanhotos Mulheres que nasceram fora do Brasil e entre 01/Jan/1990 e 31/Dez/2000?
+9) Quantas gafanhotos Mulheres tem mais de 1.90cm de altura?
+
+*/
+/*ex1*/
+select nome from Gafanhotos where sexo = 'F';
+/*ex2*/
+select * from Gafanhotos where nascimento between '2000-01-01' and '2015-12-31' order by nascimento;
+/*Ex3*/
+select * from Gafanhotos where sexo = 'M' and prof ='programador';
+/*Ex4*/
+select * from Gafanhotos where sexo = 'F' and nacionalidade ='Brasil' and nome like 'j%';
+/*Ex5*/
+select * from Gafanhotos where sexo = 'M' and nacionalidade !='Brasil' and  peso<100 and nome like '%Silva%';
+/*Ex6*/
+select max(altura) from Gafanhotos where nacionalidade = 'Brasil';
+/*Ex7*/
+select avg(peso) from Gafanhotos;
+/*Ex8*/
+select min(peso) from Gafanhotos where sexo = 'F' and nacionalidade !='Brasil' and nascimento between '1990-01-01' and '2000-12-31';/
+/*Ex9*/
+select count(*) from Gafanhotos where sexo ='F' and altura > 1.90;
+
+/*agrupamento*/
+use cadastro;
+select totaulas, count(*) from cursos group by totaulas order by totaulas; 
+
+select ano, count(*) from cursos 
+group by ano having ano > 2014 /*comando having depende do group by*/
+order by count(*) desc; 
+
+select ano, count(*) from cursos where totaulas > 30
+group by ano 
+having ano > 2014 /*comando having depende do group by*/
+order by count(*) desc; 
+
+select carga , count(*) from cursos 
+where ano >2015
+group by carga having carga > (select avg(carga) from cursos);
+
+/* 
+1-uma lista com as profissoes dos gafanhatos e seus respectivos quantitativos. 
+2- Quantos gafanhotos homens e mulheres nasceram após 01/jan/2005 ? 
+3-Lista com gafanhotos que nasceram fora do BRASIL, mostrando o país de origem
+e o total de pessoas nascidas lá. Só nos interessam os países que tiveram mais de 3
+gafanhotos com essa nacionalidade. 
+4-uma lista agrupada pela altura dos gafanhotos ,mostrando quantas pessoas 
+pesam mais de 100kg e que estao acima da media da altura de todos os gafanhotoso.*/
+
+/*ex1*/
+select prof, count(prof) from Gafanhotos
+group by prof
+order by count(prof) desc;
+
+/*Ex2*/
+select sexo, count(sexo) from Gafanhotos
+where nascimento > '2000-01-01'
+group by sexo order by sexo;
+
+/*ex3*/
+select nacionalidade, count(nacionalidade)from Gafanhotos 
+where nacionalidade != 'Brasil' 
+group by nacionalidade having count(nacionalidade)>3 ;
+
+/*EX4*/
+select altura from Gafanhotos 
+where altura >(select avg(altura) from Gafanhotos) and peso>100
+group by altura 
+order by altura desc; 
+ ```
 
 ```select * from cursos order by nome;```
 
@@ -211,8 +469,48 @@ relacionamento de 1 pra 1
 relacionamento de 1 pra muitos
 relacionamento de muitos pra muitos
 
+👨‍💻
 ```
+/*RALACIONAMENTO ENTRE TABELAS:
+ 
+relacionamento de 1 pra 1
+relacionamento de 1 pra muitos
+relacionamento de muitos pra muitos
+*/
 use cadastro;
+/*a chave estrageira so precisa ter o mesmo tipo e tamanho que a chave primaria*/
+desc Gafanhotos;
+/*adicionando chave estrageira*/
+alter table Gafanhotos add cursoPreferido int unsigned;
+
+alter table Gafanhotos 
+add foreign key(cursoPreferido)
+references cursos(IDcurso);
+/*adiconando cuurso preferido*/
+update Gafanhotos set cursoPreferido = '6' where id='1';
+
+delete from cursos where id='5';/*esse comanda resultara em erro por causa da ligacao das tabelas pela forgein key*/ 
+
+ /*afixando as colunas dos gafanhotos e cursos num so comando: relacionamento de 1 pra muitos*/
+ select Gafanhotos.nome, Gafanhotos.cursoPreferido, cursos.nome, 
+ cursos.ano from Gafanhotos join cursos on cursos.IDcurso = Gafanhotos.cursoPreferido;
+
+/*uso do 'as' pra substituicao*/
+select G.nome, G.cursoPreferido, C.nome, 
+ C.ano from Gafanhotos as G join cursos as C on C.IDcurso = G.cursoPreferido;
+ 
+ /*uso do 'right/left outer' pra afixar todos Gafanhos mesmo os sem cursoPreferido 
+ ou corsos que nao foram preferidos por ninguem */
+ 
+  /*dando prefenrias a esquerda ou seja aos gafanhotos */
+ select Gafanhotos.nome, Gafanhotos.cursoPreferido, cursos.nome, 
+ cursos.ano from Gafanhotos left outer join cursos on cursos.IDcurso = Gafanhotos.cursoPreferido;
+ 
+ /*dando prefenrias a direita ou seja aos cursos */
+ select Gafanhotos.nome, Gafanhotos.cursoPreferido, cursos.nome, 
+ cursos.ano from Gafanhotos right outer join cursos on cursos.IDcurso = Gafanhotos.cursoPreferido;
+
+```use cadastro;
 /*a chave estrageira so precisa ter o mesmo tipo e tamanho que a chave primaria*/
 desc Gafanhotos;
 /*adicionando chave estrageira*/
@@ -253,21 +551,34 @@ uso do 'as' pra substituicao
 
 #Aula16
 
-usando duas tabelas
-```select g.id, g.nome, a.ID_gafanhotos, ID_cursos from gafanhotos as g 
+👨‍💻
+```
+use cadastro;
+create table gafanhoto_assite_curso (
+ID int not null auto_increment,
+data date,
+ID_gafanhotos int,
+ID_cursos int unsigned,
+primary key(id),
+foreign key(ID_gafanhotos) references Gafanhotos(id),
+foreign key(ID_cursos) references cursos(IDcurso)
+)default charset = utf8;
+
+/*adiconado dados a tabela*/
+insert into gafanhoto_assite_curso value
+('default', '2014-02-01', '1','2');
+
+/*usando duas tabelas*/
+select g.id, g.nome, a.ID_gafanhotos, ID_cursos from gafanhotos as g 
 join gafanhoto_assite_curso as a 
 on g.id = a.ID-ID_gafanhotos;
-```
 
-usando tres tabelas 
-```
+/*usando tres tabelas */
 select g.nome, a.ID_cursos, c.nome from gafanhotos as g 
 join gafanhoto_assite_curso as a 
 on g.id = a.ID-ID_gafanhotos join cursos c on c.IDcurso = a.ID_cursos;
-```
 
-usando tres tabelas com todos cursos sendo assistido
-```
+/*usando tres tabelas com todos cursos sendo assistido*/
 select g.nome, a.ID_cursos, c.nome from gafanhotos as g right outer
 join gafanhoto_assite_curso as a 
 on g.id = a.ID-ID_gafanhotos join cursos c on c.IDcurso = a.ID_cursos;
