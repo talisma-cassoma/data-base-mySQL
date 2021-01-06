@@ -39,7 +39,6 @@ primary key(id) /* identifica os registros e da utomaticamente um valor*/
 ## AULA 5:
 
 👨‍💻
-```
 /*para afixar a bd usamos o comando select * from pessoas */
 use cadastro;
 /* vamos cadastrar alguem no nosso db*/
@@ -51,7 +50,6 @@ value
 ('Neusa','1994-12-30','F','80','1.90','Portgal'),
 ('Raul','2000-01-01','M','72','1.60','Grécia');
 select * from pessoas;
-``` 
   
 ## AULA 6:
 
