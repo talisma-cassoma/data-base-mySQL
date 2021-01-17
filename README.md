@@ -28,7 +28,7 @@ minhas ***anotacoes:**** do curso
 criamos o primeiro banco de dados 
 
    👨‍💻
-   ```
+   ```sql
    create database cadastro;/* comando pra criar base de dados*/ 
    use cadastro;             /*o comando use para selecionar a base de dados */
    create table pessoas(
