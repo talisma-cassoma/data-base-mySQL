@@ -39,7 +39,8 @@ criamos o primeiro banco de dados
    altura float,
    nacionalidade varchar(20)
    );
-   describe pessoas;         /*o comando describe ou simplesmente desc para mostar as propriedades da tabela */
+   describe pessoas;         /*o comando describe ou simplesmente desc 
+                              para mostar as propriedades da tabela */
    ```
 
 
