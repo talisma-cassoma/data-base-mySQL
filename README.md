@@ -192,7 +192,7 @@ flitar as linhas(registros)
 
 ```select * from cursos where ano = '2016';```
 
-```select ano, carga from cursos where ano <= '2016';``` podes usar outros OPERADORES OPERACIONAIS como: <, >, != , >=,e saiba <> sig diferente */
+```sql select ano, carga from cursos where ano <= '2016';``` podes usar outros OPERADORES OPERACIONAIS como: <, >, != , >=,e saiba <> sig diferente */
 
 ```select * from cursos where ano between 2014 and 2016;``` 
 
