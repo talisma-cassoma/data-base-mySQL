@@ -223,7 +223,7 @@ relacionamento de 1 pra 1
 relacionamento de 1 pra muitos
 relacionamento de muitos pra muitos
 
-```delete from cursos where id='5';``` esse comanda resultara em erro por causa da ligacao das tabelas pela forgein key
+```delete from cursos where id='5';``` esse comando resultará em erro por causa da ligacao das tabelas pela forgein key
 
  afixando as colunas dos gafanhotos e cursos num so comando: relacionamento de 1 pra muitos
  ```sql
